@@ -2,6 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
+## Serving mock data
+
+To serve the mocked data run the following commond locally:
+
+```bash
+npx http-server mock
+```
+
+It'll serve the `mock/` folder containing the `static-data.json` json file which contains all our "need" for the data.
+
+The data will be reachable on: `http://127.0.0.1:8080` (if the port is not used)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
