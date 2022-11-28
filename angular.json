@@ -30,6 +30,7 @@
               "projects/nitro-app/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/purple-green.css",
               "projects/nitro-app/src/styles.scss"
             ],
             "scripts": []
@@ -93,6 +94,7 @@
               "projects/nitro-app/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/purple-green.css",
               "projects/nitro-app/src/styles.scss"
             ],
             "scripts": []
