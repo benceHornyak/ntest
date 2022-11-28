@@ -19,6 +19,9 @@
     "paths": {
       "posts": [
         "dist/posts"
+      ],
+      "ui": [
+        "dist/ui"
       ]
     },
     "target": "ES2022",
