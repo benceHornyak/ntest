@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>Group by</mat-label>
+  <mat-select [value]="selectedFilter" (selectionChange)="selectedValueChanged($event)" name="filter">
+    <mat-option *ngFor="let filter of filters" [value]="filter">
+      {{filter}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

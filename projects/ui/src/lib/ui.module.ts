@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
-import { UiComponent } from './ui.component';
-
-
+import { FilterComponent } from './filter/filter.component';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [
-    UiComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    UiComponent
-  ]
+  declarations: [FilterComponent],
+  imports: [MatSelectModule, MatFormFieldModule, FormsModule, CommonModule],
+  exports: [FilterComponent],
 })
-export class UiModule { }
+export class UiModule {}
