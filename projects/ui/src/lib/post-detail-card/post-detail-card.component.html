@@ -1,1 +1,28 @@
-<p>post-detail-card works!</p>
+<mat-card *ngIf="postDetail">
+  <mat-card-content>
+    <div>Text: {{ postDetail.text }}</div>
+    <div *ngIf="postDetail?.time">
+      Date: {{ postDetail.time && +postDetail.time * 1000 | date }}
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Location</mat-label>
+        <input matInput [formControl]="locationCtrl" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Author</mat-label>
+        <input matInput [formControl]="authorCtrl" />
+      </mat-form-field>
+    </div>
+    <p>
+      Auto save is enabled for this.. change anything and navigate back freely
+    </p>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="goBack()">
+        Go back
+      </button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>
