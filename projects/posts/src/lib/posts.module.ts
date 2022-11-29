@@ -8,9 +8,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { PostsEffects } from './+state';
 import { AsyncPipe } from '@angular/common';
 import { PostsRoutingModule } from './posts-routing.module';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 @NgModule({
-  declarations: [PostsComponent],
+  declarations: [PostsComponent, PostDetailComponent],
   imports: [
     HttpClientModule,
     UiModule,
