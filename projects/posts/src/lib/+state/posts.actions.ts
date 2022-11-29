@@ -16,6 +16,15 @@ export const loadPostDetailSuccess = createAction(
   props<{ post: Post }>()
 );
 
+export const updatePost = createAction(
+  '[Post Update] Update Post',
+  props<{ post: Post }>()
+);
+export const updatePostSuccess = createAction(
+  '[Post Update] Update Post Success',
+  props<{ posts: Post[] }>()
+);
+
 export const initialGrouping = createAction('[Posts] Initial Grouping');
 export const changeFilterOption = createAction(
   '[Posts] Change Filter Option',

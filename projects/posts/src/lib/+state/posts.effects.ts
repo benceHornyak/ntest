@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType, OnInitEffects } from '@ngrx/effects';
 
-import { concatMap, map, skipWhile, withLatestFrom } from 'rxjs/operators';
+import { concatMap, map, withLatestFrom } from 'rxjs/operators';
 import * as PostsActions from './posts.actions';
 import * as PostsSelectors from './posts.selectors';
 import { PostsService } from '../posts.service';
@@ -34,6 +34,21 @@ export class PostsEffects implements OnInitEffects {
       })
     )
   );
+
+  updatePost$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PostsActions.updatePost),
+      withLatestFrom(this.store.pipe(select(PostsSelectors.getPosts))),
+      map(([{ post }, posts]) => {
+        const newPosts = [...posts];
+        const foundIndex = newPosts.findIndex(({ id }) => id === post.id);
+        newPosts[foundIndex] = { ...post };
+        console.log(newPosts);
+
+        return PostsActions.updatePostSuccess({ posts: newPosts });
+      })
+    );
+  });
 
   groupInitially$ = createEffect(() => {
     return this.actions$.pipe(
