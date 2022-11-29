@@ -19,7 +19,7 @@ import * as selectors from './+state';
   `,
   styles: [],
 })
-export class PostsComponent implements OnInit {
+export class PostsComponent {
   readonly filters = ['author', 'location', 'week'] as FilterOptions[];
   readonly selectedFilterOption$ = this.store.select(
     selectors.currentFilterOption
@@ -28,10 +28,6 @@ export class PostsComponent implements OnInit {
   readonly postNodes$ = this.store.select(selectors.postNodes);
 
   constructor(private store: Store<State>) {}
-
-  ngOnInit(): void {
-    this.store.dispatch(loadPosts());
-  }
 
   groupingChange(filterOption: FilterOptions) {
     this.store.dispatch(changeFilterOption({ filterOption }));
