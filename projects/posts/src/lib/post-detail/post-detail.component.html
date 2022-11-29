@@ -1,1 +1,7 @@
-
+<div *ngIf="postDetail$ | async as postDetail">
+  <lib-post-detail-card
+    [postDetail]="postDetail"
+    (backClicked)="navigateBack()"
+    (valueChanges)="saveNewPost($event)"
+  ></lib-post-detail-card>
+</div>
