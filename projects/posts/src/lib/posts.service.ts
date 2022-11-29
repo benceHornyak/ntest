@@ -15,6 +15,6 @@ export class PostsService {
   ) {}
 
   getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.url}/static-data.json`);
+    return this.http.get<Post[]>(`${this.url}/mock/static-data.json`);
   }
 }
