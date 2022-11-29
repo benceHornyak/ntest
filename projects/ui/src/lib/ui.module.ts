@@ -8,9 +8,10 @@ import { TreeViewComponent } from './tree-view/tree-view.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatButtonModule } from '@angular/material/button';
+import { PostDetailCardComponent } from './post-detail-card/post-detail-card.component';
 
 @NgModule({
-  declarations: [FilterComponent, TreeViewComponent],
+  declarations: [FilterComponent, TreeViewComponent, PostDetailCardComponent],
   imports: [
     MatSelectModule,
     MatFormFieldModule,
@@ -20,6 +21,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatButtonModule,
   ],
-  exports: [FilterComponent, TreeViewComponent],
+  exports: [FilterComponent, TreeViewComponent, PostDetailCardComponent],
 })
 export class UiModule {}
