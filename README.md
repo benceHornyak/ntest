@@ -14,6 +14,22 @@ It'll serve the `mock/` folder containing the `static-data.json` json file which
 
 The data will be reachable on: `http://127.0.0.1:8080/mock/static-data.json` (if the port is not used)
 
+## How to run the project
+
+After you've started the mock server you can run the following commands:
+
+1. Install deps
+
+```bash
+npm i
+```
+
+2. Start the app
+
+```bash
+npm run start
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
