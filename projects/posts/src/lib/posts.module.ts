@@ -6,7 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import * as fromPosts from './+state';
 import { EffectsModule } from '@ngrx/effects';
 import { PostsEffects } from './+state';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { PostsRoutingModule } from './posts-routing.module';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 
@@ -19,6 +19,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     EffectsModule.forFeature([PostsEffects]),
     AsyncPipe,
     PostsRoutingModule,
+    NgIf,
   ],
   exports: [PostsComponent],
 })
