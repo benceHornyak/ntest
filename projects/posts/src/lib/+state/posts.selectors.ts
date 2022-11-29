@@ -7,6 +7,11 @@ export const selectPostsState = createFeatureSelector<fromPosts.State>(
 
 export const getPosts = createSelector(selectPostsState, ({ posts }) => posts);
 
+export const getPostDetail = createSelector(
+  selectPostsState,
+  ({ postDetail }) => postDetail
+);
+
 export const currentFilterOption = createSelector(
   selectPostsState,
   ({ filterOption }) => filterOption

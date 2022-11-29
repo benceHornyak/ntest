@@ -9,12 +9,14 @@ export interface State {
   posts: Post[];
   filterOption: FilterOptions;
   groupedPostNodes: PostNode[];
+  postDetail: Partial<Post>;
 }
 
 export const initialState: State = {
   posts: [],
   filterOption: 'week',
   groupedPostNodes: [],
+  postDetail: {},
 };
 
 const groupingReducerFn = (
@@ -100,5 +102,10 @@ export const reducer = createReducer(
   }),
   on(PostsActions.initialGrouping, (state) => {
     return { ...groupingReducerFn(state) };
-  })
+  }),
+  on(PostsActions.loadPostDetail, (state) => state),
+  on(PostsActions.loadPostDetailSuccess, (state, { post }) => ({
+    ...state,
+    postDetail: post,
+  }))
 );

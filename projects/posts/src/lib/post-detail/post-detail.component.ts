@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import * as PostsActions from '../+state';
+import * as PostsSelector from '../+state';
 
 @Component({
   selector: 'lib-post-detail',
@@ -9,11 +11,11 @@ import { map, Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostDetailComponent implements OnInit {
-  id$!: Observable<number>;
-  constructor(private route: ActivatedRoute) {}
+  readonly postDetail$ = this.store.select(PostsSelector.getPostDetail);
+  constructor(private route: ActivatedRoute, private store: Store) {}
 
   ngOnInit(): void {
-    this.id$ = this.route.params.pipe(map(({ id }) => id));
-    this.id$.subscribe(console.log);
+    const postId = Number(this.route.snapshot.paramMap.get('id'));
+    this.store.dispatch(PostsActions.loadPostDetail({ postId }));
   }
 }

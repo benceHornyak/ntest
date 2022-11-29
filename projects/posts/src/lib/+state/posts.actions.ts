@@ -7,6 +7,15 @@ export const loadPostsSuccess = createAction(
   props<{ posts: Post[] }>()
 );
 
+export const loadPostDetail = createAction(
+  '[Post Detail] Load Post Detail',
+  props<{ postId: number }>()
+);
+export const loadPostDetailSuccess = createAction(
+  '[Post Detail] Load Post Detail Success',
+  props<{ post: Post }>()
+);
+
 export const initialGrouping = createAction('[Posts] Initial Grouping');
 export const changeFilterOption = createAction(
   '[Posts] Change Filter Option',
