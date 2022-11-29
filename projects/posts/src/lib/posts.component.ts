@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { changeFilterOption, loadPosts, State } from './+state';
 import { FilterOptions } from './models';
 import * as selectors from './+state';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'lib-posts',
@@ -27,13 +28,13 @@ export class PostsComponent {
 
   readonly postNodes$ = this.store.select(selectors.postNodes);
 
-  constructor(private store: Store<State>) {}
+  constructor(private store: Store<State>, private router: Router) {}
 
   groupingChange(filterOption: FilterOptions) {
     this.store.dispatch(changeFilterOption({ filterOption }));
   }
 
   navigateToPostWithId(id: number) {
-    console.log(id);
+    this.router.navigate(['posts', id]);
   }
 }
